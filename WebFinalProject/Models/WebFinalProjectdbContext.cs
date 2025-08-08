@@ -46,6 +46,12 @@ public class WebFinalProjectDbContext(DbContextOptions opt) : DbContext(opt)
             .WithOne(p => p.Room)
             .OnDelete(DeleteBehavior.NoAction);
 
+        model.Entity<Room>()
+            .HasOne(p => p.User)
+            .WithMany(r => r.Rooms)
+            .HasForeignKey(r => r.UserID)
+            .OnDelete(DeleteBehavior.NoAction);
+
         model.Entity<Invite>()
             .HasMany(i => i.Users)
             .WithOne(u => u.Invite)
