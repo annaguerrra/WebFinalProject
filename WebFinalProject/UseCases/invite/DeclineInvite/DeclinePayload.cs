@@ -1,0 +1,1 @@
+namespace WebFinalProject.UseCases.invite.DeclineInvite;
