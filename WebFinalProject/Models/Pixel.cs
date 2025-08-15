@@ -9,8 +9,9 @@ public class Pixel
     public int G { get; set; }
     public int B { get; set; }
 
-    public int RoomID { get; set; }
-    public Room Room { get; set; }
-    public ICollection<Room> Rooms { get; set; } = [];
+    public Guid UserID { get; set; }
+    public User User { get; set; }
 
+    public Guid RoomID { get; set; }
+    public Room Room { get; set; }
 }
