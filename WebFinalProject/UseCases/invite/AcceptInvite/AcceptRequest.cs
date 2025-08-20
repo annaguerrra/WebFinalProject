@@ -1,2 +1,1 @@
-namespace WebFinalProject.UseCases.invite.AcceptInvite;
-
+namespace WebFinalProject.UseCases.Invite.AcceptInvite;
