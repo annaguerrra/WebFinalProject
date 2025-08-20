@@ -1,4 +1,4 @@
-namespace WebFinalProject.UseCases.Invite.AcceptInvite;
+namespace WebFinalProject.UseCases.Invites.AcceptInvite;
 
 public record AcceptRequest(
     Guid RoomID,
