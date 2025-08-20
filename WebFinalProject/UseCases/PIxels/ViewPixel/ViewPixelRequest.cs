@@ -3,5 +3,5 @@ using WebFinalProject.Models;
 using WebFinalProject.UseCases.Pixels;
 
 public record ViewPixel(
-    
+    Guid RoomID
 );
