@@ -1,7 +1,8 @@
+using System.ComponentModel.DataAnnotations;
 namespace WebFinalProject.UseCases.Invite.PaintPixel;
 
 public record PaintRequest(
-    
+    [Required]
     int x,
     int y,
     int R,
