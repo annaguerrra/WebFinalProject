@@ -7,5 +7,5 @@ public record LoginRequest
 {
     // validação pra ver se o nome de usuário já existe
     [Required]
-    
+    [MinLength()]
 }
