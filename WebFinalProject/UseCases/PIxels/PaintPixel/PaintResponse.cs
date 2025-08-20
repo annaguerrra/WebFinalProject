@@ -1,2 +1,3 @@
-namespace WebFinalProject.UseCases.Invites.PaintPixel;
+namespace WebFinalProject.UseCases.PaintPixel;
 
+public record PaintPixel;
