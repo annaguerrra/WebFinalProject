@@ -1,1 +1,2 @@
-namespace WebFinalProject.UseCases.invite.PaintPixel;
+namespace WebFinalProject.UseCases.Invite.PaintPixel;
+
