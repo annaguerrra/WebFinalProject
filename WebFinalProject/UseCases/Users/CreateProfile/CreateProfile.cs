@@ -1,0 +1,1 @@
+namespace WebFinalProject.UseCases.Users.CreateProfile;
