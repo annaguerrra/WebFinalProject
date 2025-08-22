@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.room.Login;
+namespace WebFinalProject.UseCases.User.Login;
