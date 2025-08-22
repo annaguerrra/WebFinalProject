@@ -1,6 +1,8 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace WebFinalProject.Validations;
 
-public class NeedNumberAttribute : ValidationsAttribute
+public class NeedNumberAttribute : ValidationAttribute
 {
     public override bool IsValid(object value)
      => value is string text && text.Any(c => c is <= '0' or >= '9');
