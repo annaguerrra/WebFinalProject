@@ -1,1 +1,5 @@
-namespace WebFinalProject.UseCases.plan.ListAvaliablePlans;
+namespace WebFinalProject.UseCases.Plans.ListAvaliablePlans;
+
+public record ListAvaliablePlansRequest(
+    Guid PlanID
+);
