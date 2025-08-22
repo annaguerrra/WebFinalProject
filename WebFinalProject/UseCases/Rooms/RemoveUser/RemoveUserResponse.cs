@@ -1,1 +1,3 @@
-namespace WebFinalProject.UseCases.room.RemoveUser;
+namespace WebFinalProject.UseCases.Rooms.RemoveUser;
+
+public record RemoveUserResponse();

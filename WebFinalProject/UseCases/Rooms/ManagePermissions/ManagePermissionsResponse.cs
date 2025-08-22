@@ -1,1 +1,3 @@
-namespace WebFinalProject.UseCases.room.ManagePermissions;
+namespace WebFinalProject.UseCases.Rooms.ManagePermissions;
+
+public record ManagePermissionsResponse();
