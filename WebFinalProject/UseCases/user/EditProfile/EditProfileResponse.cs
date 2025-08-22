@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.room.EditProfile;
+namespace WebFinalProject.UseCases.User.EditProfile;

@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.room.CreateProfile;
+namespace WebFinalProject.UseCases.User.CreateProfile;

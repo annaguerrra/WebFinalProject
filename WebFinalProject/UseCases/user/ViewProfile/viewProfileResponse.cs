@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.room.viewProfile;
+namespace WebFinalProject.UseCases.User.viewProfile;
