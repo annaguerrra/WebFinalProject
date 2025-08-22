@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-
 public class JWTService : IJWTServices
 {
     public string CreateToken(UserToAuth data)
