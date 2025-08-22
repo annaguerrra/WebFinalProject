@@ -4,7 +4,6 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-
 public class JWTService : IJWTServices
 {
     public string CreateToken(UserToAuth data)
@@ -16,7 +15,8 @@ public class JWTService : IJWTServices
         var jwt = new JwtSecurityToken(
             claims: [
                 new Claim(ClaimTypes.NameIdentifier, data.UserID.ToString()),
-                new Claim(ClaimTypes.Name, data.Username)
+                new Claim(ClaimTypes.Name, data.Username),
+                new Claim(ClaimTypes.Role, data.Plan)
             ],
             expires: DateTime.UtcNow.AddHours(2),
             signingCredentials: new SigningCredentials(
