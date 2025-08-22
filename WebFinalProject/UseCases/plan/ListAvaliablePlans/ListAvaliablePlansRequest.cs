@@ -1,4 +1,4 @@
-namespace WebFinalProject.UseCases.Plan.ListAvaliablePlans;
+namespace WebFinalProject.UseCases.Plans.ListAvaliablePlans;
 
 public record ListAvaliablePlansRequest(
     Guid PlanID

@@ -1,1 +1,0 @@
-namespace WebFinalProject.UseCases.room.ListUserRooms;
