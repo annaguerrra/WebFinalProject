@@ -7,7 +7,7 @@ public class CreateRoomUseCase(WebFinalProjectDbContext ctx)
     {
         var room = new Room
         {
-            UserId = request.UserID,
+            UserID = request.UserID,
             Name = request.Name,
             Width = request.Width,
             Height = request.Height
