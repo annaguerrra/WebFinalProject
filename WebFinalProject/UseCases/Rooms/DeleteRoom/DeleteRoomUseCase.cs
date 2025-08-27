@@ -11,12 +11,11 @@ public class DeleteRoomUsecase(WebFinalProjectDbContext ctx)
         if (access is null)
             return Result<DeleteRoomResponse>.BadRequest();
 
-        if (access.RoleID == 4)
-        {
-            ctx.Rooms.Remove(access.RoomID);
-            await ctx.SaveChangesAsync();
-            return Result<DeleteRoomResponse>.Ok();
-        }
-        return Result<DeleteRoomResponse>.BadRequest("You don't have permission!");
+        if (access.RoleID != 4)
+            return Result<DeleteRoomResponse>.BadRequest("You don't have permission!");
+        
+        ctx.Rooms.Remove(access.RoomID);
+        await ctx.SaveChangesAsync();
+        return Result<DeleteRoomResponse>.Ok();
     }
 }
