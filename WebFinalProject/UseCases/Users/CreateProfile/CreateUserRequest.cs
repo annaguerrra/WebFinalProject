@@ -21,6 +21,6 @@ public record CreateUserRequest
     [IsUpperLowerCase]
     [SpecialChar]
     public string Password { get; init; }
-    
-    
+
+
 }
