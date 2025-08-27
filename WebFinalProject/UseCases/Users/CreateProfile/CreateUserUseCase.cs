@@ -1,13 +1,3 @@
-// using WebFinalProject.Services.Password;
-// namespace WebFinalProject.UseCases.User.CreateUser;
+using WebFinalProject.Services.Password;
+namespace WebFinalProject.UseCases.Users.CreateUser;
 
-// public class CreateProfileUseCase(IPasswordService passwordService)
-// {
-//     public async Task<Result<CreateUserResponse>> Do(CreateUserRequest request)
-//     {
-//         var user = new User
-//         {
-//             Username = request.
-//         }
-//     }
-// }

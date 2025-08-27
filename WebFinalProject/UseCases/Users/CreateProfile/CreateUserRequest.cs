@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using WebFinalProject.Validations;
-namespace WebFinalProject.UseCases.User.CreateUser;
+namespace WebFinalProject.UseCases.Users.CreateUser;
 
 public record CreateUserRequest
 {
@@ -21,6 +21,4 @@ public record CreateUserRequest
     [IsUpperLowerCase]
     [SpecialChar]
     public string Password { get; init; }
-
-
 }
