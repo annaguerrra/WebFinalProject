@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using WebFinalProject.UseCases.room;
+using WebFinalProject.UseCases.Rooms;
 namespace WebFinalProject.UseCases.PaintPixel;
 public record PaintRequest {
     [Required]
