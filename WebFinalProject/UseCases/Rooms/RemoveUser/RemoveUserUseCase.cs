@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.room.RemoveUser;
+namespace WebFinalProject.UseCases.Rooms.RemoveUser;
