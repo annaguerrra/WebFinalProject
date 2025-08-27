@@ -1,4 +1,4 @@
-namespace WebFinalProject.UseCases.User.Login;
+namespace WebFinalProject.UseCases.Users.Login;
 
 public record LoginResponse(
     

@@ -1,5 +1,3 @@
-namespace WebFinalProject;
-
 public record Result<T>(
     T Data,
     bool IsSuccess,
