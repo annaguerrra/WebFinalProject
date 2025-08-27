@@ -1,4 +1,4 @@
-namespace WebFinalProject.UseCases.User.EditProfile;
+namespace WebFinalProject.UseCases.Users.EditProfile;
 
 public record EditProfileResponse()
 {

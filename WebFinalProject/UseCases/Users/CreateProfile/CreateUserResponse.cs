@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.User.CreateUser;
+namespace WebFinalProject.UseCases.Users.CreateUser;
