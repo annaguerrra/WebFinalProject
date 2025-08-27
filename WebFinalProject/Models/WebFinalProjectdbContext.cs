@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+
 namespace WebFinalProject.Models;
 
 public class WebFinalProjectDbContext(DbContextOptions options) : DbContext(options)
