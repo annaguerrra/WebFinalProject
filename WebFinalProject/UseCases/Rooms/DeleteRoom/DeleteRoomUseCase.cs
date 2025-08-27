@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.Room.DeleteRoom;
+namespace WebFinalProject.UseCases.Rooms.DeleteRoom;

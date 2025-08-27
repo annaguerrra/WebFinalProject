@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.room.ViewRoom;
+namespace WebFinalProject.UseCases.Rooms.ViewRoom;
