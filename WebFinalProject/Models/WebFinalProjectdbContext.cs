@@ -73,5 +73,13 @@ public class WebFinalProjectDbContext(DbContextOptions options) : DbContext(opti
             .WithMany(p => p.Users)
             .HasForeignKey(u => u.PlanID)
             .OnDelete(DeleteBehavior.NoAction);
+
+        model.Entity<User>()
+            .HasIndex(u => u.Email)
+            .IsUnique();
+
+        model.Entity<User>()
+            .HasIndex(u => u.Username)
+            .IsUnique();
     }
 }
