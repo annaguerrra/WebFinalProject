@@ -1,6 +1,4 @@
 using WebFinalProject.Models;
-using WebFinalProject.UseCases.Rooms.DeleteRoom;
-
 namespace WebFinalProject.UseCases.Rooms.DeleteRoom;
 
 public class DeleteRoomUsecase(WebFinalProjectDbContext ctx)
@@ -19,3 +17,4 @@ public class DeleteRoomUsecase(WebFinalProjectDbContext ctx)
         return Result<DeleteRoomResponse>.Ok();
     }
 }
+
