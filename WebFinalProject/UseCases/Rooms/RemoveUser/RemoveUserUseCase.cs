@@ -9,5 +9,7 @@ public class RemoveUserUsecase(WebFinalProjectDbContext ctx)
         //     a => a.RoomID == request.RoomID &&
         //     a => a.U == 
         // )
+        // dotnet ef migrations add <Oto nome> 
+    // dotnet ef database update
     } 
 }
