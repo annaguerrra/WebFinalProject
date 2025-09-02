@@ -1,2 +1,2 @@
-namespace WebFinalProject.UseCases.Users.viewProfile;
+namespace WebFinalProject.UseCases.Users.ViewProfile;
 
