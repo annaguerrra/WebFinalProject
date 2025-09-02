@@ -1,6 +1,7 @@
 namespace WebFinalProject.UseCases.Users.Login;
 
 public record LoginRequest(
-    string username,
-    string password
+    string Username,
+    string Password,
+    string Email
 );
