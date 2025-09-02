@@ -15,6 +15,12 @@ public class ViewProfileUseCase(
         if (profile.Count() == 0)
             return Result<ViewProfileResponse>.BadRequest($"User '{profile.Username}' not found");
 
-        return Result<ViewProfileResponse>.Ok(null);
+        var response = new ViewProfileResponse(
+            profile.Username,
+            profile.Bio,
+            profile.Imagem
+        );
+
+        return Result<ViewProfileResponse>.Ok(response);
     }
 }
