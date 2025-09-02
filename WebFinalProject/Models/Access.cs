@@ -3,7 +3,7 @@ namespace WebFinalProject.Models;
 public class Access
 {
     public Guid ID { get; set; }
-    public string Name { get; set; }
+    public string Username { get; set; }
     public Guid RoomID { get; set; }
     public Guid UserID{ get; set; }
     public int RoleID { get; set; } 
