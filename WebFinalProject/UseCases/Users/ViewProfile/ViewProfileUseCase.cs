@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using WebFinalProject.Models;
 
 namespace WebFinalProject.UseCases.Users.ViewProfile;
@@ -18,7 +19,7 @@ public class ViewProfileUseCase(
         var response = new ViewProfileResponse(
             profile.Username,
             profile.Bio,
-            profile.Imagem
+            profile.Image
         );
 
         return Result<ViewProfileResponse>.Ok(response);
