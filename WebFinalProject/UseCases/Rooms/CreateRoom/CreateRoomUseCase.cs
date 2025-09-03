@@ -15,7 +15,6 @@ public class CreateRoomUseCase(WebFinalProjectDbContext ctx)
 
         ctx.Add(room);
         await ctx.SaveChangesAsync();
-
         return Result<CreateRoomResponse>.Ok(new());
     }
 }
