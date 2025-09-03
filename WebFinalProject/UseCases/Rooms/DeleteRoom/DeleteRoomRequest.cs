@@ -2,5 +2,6 @@ namespace WebFinalProject.UseCases.Rooms.DeleteRoom;
 
 public record DeleteRoomRequest(
     Guid RoomID,
-    Guid UserID
+    Guid UserID,
+    int RoleID
 );
