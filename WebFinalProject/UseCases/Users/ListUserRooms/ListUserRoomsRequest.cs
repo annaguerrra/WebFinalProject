@@ -1,5 +1,7 @@
 namespace WebFinalProject.UseCases.Rooms.ListUserRooms;
 
 public record ListUserRoomsRequest(
-    Guid UserID
+    Guid RoomID,
+    Guid UserID,
+    int RoleID
 );
