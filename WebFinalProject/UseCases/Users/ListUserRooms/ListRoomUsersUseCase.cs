@@ -1,35 +1,36 @@
 using WebFinalProject.Models;
 using Microsoft.EntityFrameworkCore;
-namespace WebFinalProject.UseCases.Rooms.ListUserRooms;
+namespace WebFinalProject.UseCases.Rooms.ListRoomUsers;
 
 public class ListRoomUsersUseCase(WebFinalProjectDbContext ctx)
 {
-    async Task<Result<ListUserRoomsResponse>> Do(ListUserRoomsRequest request)
+    public async Task<Result<ListRoomUsersResponse>> Do(ListRoomUsersRequest request)
     {
         var room = await ctx.Rooms
             .Include(r => r.Users)
                 .ThenInclude(u => u.Accesses)
                     .ThenInclude(a => a.Role)
             .FirstOrDefaultAsync(r => r.ID == request.RoomID);
-
-
+ 
         if (room is null)
-            return Result<ListUserRoomsResponse>.BadRequest("Room doesn't exists");
+            return Result<ListRoomUsersResponse>.BadRequest("Room doesn't exists");
 
         if (room.UserID != request.UserID)
-            return Result<ListUserRoomsResponse>.BadRequest("Forbiden");
+            return Result<ListRoomUsersResponse>.BadRequest("Forbiden");
 
-        var response = new ListUserRoomsResponse(
+        var role = await ctx.Roles
+            .FindAsync(request.RoleID);
+
+        var response = new ListRoomUsersResponse(
             room.Name,
             from u in room.Users
             select new Member
             {
-                Username = u.Username,
-                
-            }
-        );
-        
+                Nickname = u.Username,
+                RoleTitle = role.Name
+            });
+
+        return Result<ListRoomUsersResponse>.Ok(response);
     }    
-    
 }
 
