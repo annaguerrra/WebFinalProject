@@ -1,3 +1,4 @@
+using WebFinalProject.Infrastructure;
 using WebFinalProject.Models;
 using WebFinalProject.Services.JWT;
 using WebFinalProject.Services.Password;
@@ -18,6 +19,13 @@ public class LoginUseCase(
         if (profile.Password != payload.Password)
             return Result<LoginResponse>.BadRequest("Login or Password are incorrects");
 
-        var token = jwt.CreateToken();
+        var token = jwt.CreateToken(new ProfileToAuth {
+            ID = profile.ID,
+            Username = profile.Username,
+            Email = profile.Email
+        }
+        );
+
+        return Result<LoginResponse>.Ok();
     }
 }

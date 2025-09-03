@@ -1,6 +1,5 @@
 using WebFinalProject.Models;
 using Microsoft.EntityFrameworkCore;
-using 
 namespace WebFinalProject.UseCases.Rooms.ListUserRooms;
 
 public class ListRoomUsersUseCase(WebFinalProjectDbContext ctx)
