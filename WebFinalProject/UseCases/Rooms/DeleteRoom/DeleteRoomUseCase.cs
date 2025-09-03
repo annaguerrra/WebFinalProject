@@ -1,20 +1,25 @@
+using Microsoft.EntityFrameworkCore;
 using WebFinalProject.Models;
 namespace WebFinalProject.UseCases.Rooms.DeleteRoom;
 
 public class DeleteRoomUsecase(WebFinalProjectDbContext ctx)
 {
-    async Task<Result<DeleteRoomResponse>> Do(DeleteRoomRequest request)
+    async Task<Result<DeleteRoomResponse>> Do(DeleteRoomRequest payload)
     {
-        var access = ctx.Accesses.Where(a => a.RoomID == request.RoomID && a.UserID == request.UserID).FirstOrDefault();
-        if (access is null)
-            return Result<DeleteRoomResponse>.BadRequest();
+        if (payload.RoleID != 4)
+            return Result<DeleteRoomResponse>.BadRequest("You don't have permission");
 
-        if (access.RoleID != 4)
-            return Result<DeleteRoomResponse>.BadRequest("You don't have permission!");
+        var room = await ctx.Rooms
+            .Include(a => a.Accesses)
+            .Where(r => r.UserID == payload.UserID && r.ID == payload.RoomID && r == r.Accesses.Select(a => a.RoleID == 4))
+            .FirstAsync();
 
-        ctx.Rooms.Remove(access.RoomID);
+        if (room is null)
+            return Result<DeleteRoomResponse>.BadRequest("Room not found");
+
+        ctx.Rooms.Remove(room);
         await ctx.SaveChangesAsync();
-        return Result<DeleteRoomResponse>.Ok();
+        return Result<DeleteRoomResponse>.Ok(null);
     }
 }
 

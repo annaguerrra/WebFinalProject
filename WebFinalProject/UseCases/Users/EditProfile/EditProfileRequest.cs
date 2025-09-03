@@ -1,10 +1,10 @@
 namespace WebFinalProject.UseCases.Users.EditProfile;
 
-public record EditProfileResponse()
-{
-    public string? Username { get; set; }
-    public string? Email { get; set; }
-    public string? Bio { get; set; }
-    public string? Image { get; set; }
-    
-}
+public record EditProfileRequest(
+    string Password,
+    string Username,
+    string Email,
+    string Image,
+    string Bio
+);
+
