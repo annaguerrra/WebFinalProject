@@ -1,11 +1,24 @@
+using WebFinalProject.Models;
+
 namespace WebFinalProject.Services.IRolesServices;
 
-public interface IRolesServices
+public class IRolesServices
 {
-    public int RoleDefinition();
-   /* Plateia: 1
-      Pintor: 2
-      Administrador: 3
-      Dono: 4  
-   */
+   public void RoleDefinition(Role role)
+   {
+      if (role.ID == 1)
+         role.Name = "Audience";
+
+      else if (role.ID == 2)
+         role.Name = "Painter";
+
+      else if (role.ID == 3)
+         role.Name = "Administrator";
+
+      else if (role.ID == 4)
+         role.Name = "Owner";
+
+      else
+         Console.WriteLine("This role ID doesn't exist.");
+   }
 }
