@@ -1,4 +1,4 @@
-using WebFinalProject.Services.IRolesServices;
+using WebFinalProject.Services.RolesServices;
 
 namespace WebFinalProject.UseCases.Invites.InviteUser;
 
