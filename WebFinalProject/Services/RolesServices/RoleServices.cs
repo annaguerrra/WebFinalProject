@@ -2,7 +2,7 @@ using WebFinalProject.Models;
 
 namespace WebFinalProject.Services.IRolesServices;
 
-public class IRolesServices
+public class RolesServices
 {
    public void RoleDefinition(Role role)
    {
