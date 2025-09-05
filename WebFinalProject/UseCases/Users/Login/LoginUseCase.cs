@@ -23,7 +23,7 @@ public class LoginUseCase(
         if (profile.Password != payload.Password)
             return Result<LoginResponse>.BadRequest("Login or Password are incorrects");
 
-        var token = jwt.CreateToken()
+        var token = jwt.CreateToken();
         return Result<LoginResponse>.Ok();
     }
 }
