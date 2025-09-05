@@ -1,4 +1,6 @@
 
+using WebFinalProject.UseCases.Plans.ListAvaliablePlans;
+
 public record Result<T>(
     T Data,
     bool IsSuccess,

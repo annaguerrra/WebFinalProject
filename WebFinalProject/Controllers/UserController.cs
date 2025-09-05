@@ -6,12 +6,12 @@ using WebFinalProject.UseCases.Users.CreateUser;
 namespace WebFinalProject.Controller;
 
 [ApiController]
-[Route("??")]
+[Route("User")]
 public class UserController : ControllerBase
 {
-    [HttpPost("??")]
+    [HttpPost]
     public async Task<CreateUserResponse> CreateUser([FromBody]CreateUserRequest user)
     {
-        var request = new CreateUserRequest 
+        var request =  await user
     }
 }
