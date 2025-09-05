@@ -12,6 +12,9 @@ public class AcceptUseCase(
             .Include(a => a.Accesses)
             .Where(i => i.Invites == payload.Invite.Select(i => i.ID))
             .FirstOrDefaultAsync();
+        
+        var access = await ctx.Accesses
+            .Where(a => a)
 
         if (invite is null)
             return Result<AnswerInviteResponse>.BadRequest("Invite not found");
