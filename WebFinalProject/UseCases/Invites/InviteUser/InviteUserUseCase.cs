@@ -1,12 +1,19 @@
+using WebFinalProject.Models;
+using WebFinalProject.Services.IRolesServices;
+
 using WebFinalProject.Services.RolesServices;
 
 namespace WebFinalProject.UseCases.Invites.InviteUser;
 
-public class InviteUserUseCase
+public class InviteUserUseCase(WebFinalProjectDbContext ctx,
+    IRolesServices rolesServices
+)
 {
-    // public async Task<Result<InviteUserResponse>> Do(InviteUserRequest payload)
-    // {
-    //     r
-    // }
+    async Task<Result<InviteUserResponse>> Do(InviteUserRequest payload)
+    {
+        var invite = new Invite (
+            
+        )
+    }
 
 }
