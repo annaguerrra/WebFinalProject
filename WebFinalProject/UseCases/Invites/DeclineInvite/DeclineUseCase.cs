@@ -8,12 +8,16 @@ public class DeclineInviteUseCase(
     IRolesServices role
 )
 {
-    public async Task<Result<DeclineResponse>> Do(DeclineRequest payload)
+    public async Task<Result<DeclineResponse>> Do(DeclineRequest request)
     {
-        var user = new User();
-        if (payload.RoomID == payload.) {
-            ctx.Invites.FirstOrDefaultAsync()
-        }
+        var room = await ctx.Rooms.FindAsync(request.RoomID);
+        var user = await ctx.Users.FindAsync(request.UserID);
+        var invite = await ctx.Users.Invites.FindAsync(request.InviteID);
+
+        if(!user.Invites.Contains(request.InviteID))
+            return Result<DeclineInvite>.BadRequest("Invite doesn't exist");
+
+        ctx.Users.Invites.Remove(invite);
         
         return Result<DeclineResponse>.Ok(null);
     }
