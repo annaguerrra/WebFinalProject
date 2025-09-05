@@ -29,6 +29,6 @@ public class AcceptUseCase(
         ctx.Users.Add(invite);
         await ctx.SaveChangesAsync();
 
-        return Result<AnswerInviteResponse>.Ok(null);
+        return Result<AnswerInviteResponse>.Ok(new ());
     }
 }
