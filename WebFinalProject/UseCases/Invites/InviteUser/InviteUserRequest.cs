@@ -1,8 +1,8 @@
 namespace WebFinalProject.UseCases.Invites.InviteUser;
 
 public record InviteUserRequest(
-    Guid UserID,
+    Guid ReceiverID,
+    string Username,
     Guid RoomID,
-    Guid RoleID,
-    Guid AccessID
+    Guid RoleID
 );
