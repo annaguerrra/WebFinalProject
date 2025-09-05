@@ -1,1 +1,2 @@
 namespace WebFinalProject.UseCases.Pixels.ViewPixel;
+
