@@ -21,6 +21,6 @@ public class RemoveUserUsecase(WebFinalProjectDbContext ctx)
         
         ctx.Accesses.Remove(target);
         await ctx.SaveChangesAsync();
-        return Result<RemoveUserResponse>.Ok(null); 
+        return Result<RemoveUserResponse>.Ok(new ()); 
     } 
 }
