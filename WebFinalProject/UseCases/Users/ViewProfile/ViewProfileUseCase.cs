@@ -13,7 +13,7 @@ public class ViewProfileUseCase(
          p => p.Username == payload.Username
         );
 
-        if (profile.Count() == 0)
+        if (profile is null)
             return Result<ViewProfileResponse>.BadRequest($"User '{profile.Username}' not found");
 
         var response = new ViewProfileResponse(

@@ -1,10 +1,10 @@
 using WebFinalProject.Models;
-using WebFinalProject.Services.IRolesServices;
+using WebFinalProject.Services.RolesServices;
 namespace WebFinalProject.UseCases.Invites.AcceptInvite;
 
 public class AcceptUseCase(
     WebFinalProjectDbContext ctx,
-    IRolesServices role
+    RolesServices role
 )
 {
     public async Task<Result<AcceptResponse>> Do(AcceptRequest payload)
