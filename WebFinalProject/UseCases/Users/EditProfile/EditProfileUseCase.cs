@@ -13,9 +13,12 @@ public class EditProfileUseCase(
     public async Task<Result<EditProfileResponse>> Do(EditProfileRequest payload)
     {
         var user = await ctx.Users.FirstAsync(
-              u => u.Password == payload.Password
+              u => u.ID == payload.ID
         );
 
+        if (user is null)
+            return Result<EditProfileResponse>.BadRequest("User not found.");
+        
         if (payload.Email is not null)
             user.Email = payload.Email;
         

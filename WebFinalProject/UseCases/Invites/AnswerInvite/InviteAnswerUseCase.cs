@@ -7,26 +7,33 @@ public class AcceptUseCase(
 {
     public async Task<Result<AnswerInviteResponse>> Do(AnswerInviteRequest payload)
     {
-        var invite = await ctx.Users
-            .Include(u => u.Invites)
-            .Include(a => a.Accesses)
-            .Where(i => i.Invites == payload.Invite.Select(i => i.ID))
-            .FirstOrDefaultAsync();
-        
-        var access = await ctx.Accesses
-            .Where(a => a)
+        var invite = await ctx.Invites.FindAsync(payload.InviteId);
 
         if (invite is null)
             return Result<AnswerInviteResponse>.BadRequest("Invite not found");
 
-        bool accept = true;
+        if (invite.UserID != payload.UserId)
+            return Result<AnswerInviteResponse>.BadRequest("Missing permission");
+
+        bool accept = payload.Accepted;
 
         if (!accept)
         {
-            ctx.Users.Remove(invite);
+            ctx.Invites.Remove(invite);
             await ctx.SaveChangesAsync();
+            return Result<AnswerInviteResponse>.Ok(new ());
         }
-        ctx.Users.Add(invite);
+            ctx.Plans.ToListAsync();
+        var role = await ctx.Roles
+            .FirstOrDefaultAsync(r => r.Name == "Audience");
+
+        var access = new Access {
+            UserID = invite.UserID,
+            RoomID = invite.RoomID,
+            RoleID = role.ID
+        };
+
+        ctx.Accesses.Add(access);
         await ctx.SaveChangesAsync();
 
         return Result<AnswerInviteResponse>.Ok(new ());
