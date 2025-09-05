@@ -5,10 +5,10 @@ public class ViewRoomUseCase(WebFinalProjectDbContext ctx)
 {
     async Task<Result<ViewRoomResponse>> Do(ViewRoomRequest request)
     {
-        var room = await ctx.Room.FindAsync(request.RoomID);
+        var room = await ctx.Rooms.FindAsync(request.RoomID);
         var user = await ctx.Accesses.FindAsync(request.UserID);
 
-        if(!user.Rooms.Contains(room))
+        if(user.RoomID != room.ID)
             return Result<ViewRoomResponse>.BadRequest("Forbidden");
         
         var response = new ViewRoomResponse(
