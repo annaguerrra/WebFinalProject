@@ -1,6 +1,6 @@
 using WebFinalProject.Models;
 
-namespace WebFinalProject.Services.IRolesServices;
+namespace WebFinalProject.Services.RolesServices;
 
 public class IRolesServices
 {
