@@ -19,6 +19,6 @@ public class CreateUserUseCase(
         ctx.Users.Add(user);
         await ctx.SaveChangesAsync();
 
-        return Result<CreateUserResponse>.Ok(null);
+        return Result<CreateUserResponse>.Ok(new ());
     }
 }

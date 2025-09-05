@@ -19,7 +19,7 @@ public class DeleteRoomUsecase(WebFinalProjectDbContext ctx)
 
         ctx.Rooms.Remove(room);
         await ctx.SaveChangesAsync();
-        return Result<DeleteRoomResponse>.Ok(null);
+        return Result<DeleteRoomResponse>.Ok(new ());
     }
 }
 
