@@ -11,8 +11,8 @@ public class InviteUserUseCase(WebFinalProjectDbContext ctx,
 {
     async Task<Result<InviteUserResponse>> Do(InviteUserRequest payload)
     {
-        var invite = new Invite (
-            
+        var invite = new Invite(
+
         )
     }
 

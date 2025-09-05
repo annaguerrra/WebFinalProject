@@ -1,5 +1,6 @@
 namespace WebFinalProject.UseCases.Plans.ListAvaliablePlans;
 
 public record ListAvaliablePlansRequest(
-    Guid PlanID
+    Guid PlanID,
+    string Name
 );
