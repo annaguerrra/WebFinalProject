@@ -20,6 +20,8 @@ public class RemoveUserUsecase(WebFinalProjectDbContext ctx)
             return Result<RemoveUserResponse>.BadRequest("You don't have permission");
         
         
+        
+        
 
 
 
