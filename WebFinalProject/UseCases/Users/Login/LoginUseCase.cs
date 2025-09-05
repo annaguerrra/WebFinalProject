@@ -23,7 +23,8 @@ namespace WebFinalProject.UseCases.Users.Login;
 //         if (profile.Password != payload.Password)
 //             return Result<LoginResponse>.BadRequest("Login or Password are incorrects");
 
-//         // var token = jwt.CreateToken()
-//         // return Result<LoginResponse>.Ok();
+
+//         var token = jwt.CreateToken();
+//         return Result<LoginResponse>.Ok();
 //     }
 // }

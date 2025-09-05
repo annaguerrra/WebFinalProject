@@ -1,1 +1,1 @@
-namespace WebFinalProject.UseCases.Invite.ListPendingInvitations;
+namespace WebFinalProject.UseCases.Invites.ListPendingInvitations;

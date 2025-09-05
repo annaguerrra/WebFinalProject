@@ -1,7 +1,8 @@
 namespace WebFinalProject.UseCases.Rooms.RemoveUser;
 
 public record RemoveUserRequest(
-    Guid RequesterUserID, 
+    Guid AdministratorID, 
     Guid RoomID,
-    Guid TargetUserName 
+    Guid MemberID,
+    int RoleID
 );
